@@ -49,10 +49,10 @@
     - django_template_project -> chnl_expl_project
     - env_min -> env27_chnl_expl
 
-- create github project
+- √ create github project
 
 - add setting file
 
-- get intro references
+- start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 
 ---
