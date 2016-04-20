@@ -51,6 +51,10 @@
 
 - √ create github project
 
+- √ create sublime project
+
+- √ update env from requirements
+
 - add setting file
 
 - start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)

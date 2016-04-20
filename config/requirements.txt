@@ -1,4 +1,6 @@
-Django
-PyMySQL
-requests
-shellvars-py
+asgi-redis==0.10.0
+channels==0.11.0
+Django==1.9.5
+PyMySQL==0.7.2
+requests==2.9.1
+shellvars-py==0.1.2
