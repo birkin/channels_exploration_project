@@ -55,7 +55,34 @@
 
 - √ update env from requirements
 
-- add setting file
+- √ make log dir
+    - √ add log to system's logrotate
+    - √ add dir to sublime project
+
+- √ make settings dir and env_settings.sh file
+    - √ add settings directory to sublime project
+    - √ update env_settings.sh file
+    - update env's activate.py and activate_this.py
+
+- add db
+
+- add django-media-directory
+
+- make git-pull script (w/set-permissions) & run it
+    - try a python ./manage.py check
+
+- run python ./manage.py migrate to create tables
+
+- run python ./manage.py createsuperuser for the admin user prompt
+
+- run python ./manage.py runserver host:port, and hit host/port at hello-world url
+
+- add session-clearance crontab entry
+
+- update passenger-config
+
+
+## Initial work...
 
 - start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 
