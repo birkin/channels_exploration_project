@@ -1,6 +1,8 @@
-##### overview
+##### on this page
 
-- coming
+- Django Channels info
+- Setup notes
+- Initial work
 
 ---
 
@@ -11,6 +13,8 @@
 - [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 - [Channel example projects](https://github.com/andrewgodwin/channels-examples) -- projects use docker
 - [pro-channels blogger](https://brejoc.com/django-channels-are-a-game-changer/)
+
+---
 
 
 ### Setup
@@ -68,21 +72,23 @@
 
 - √ add django-media-directory
 
-- make git-pull script (w/set-permissions) & run it
-    - try a python ./manage.py check
+- √ make git-pull script (w/set-permissions) & run it
+    - √ try a python ./manage.py check
 
-- run python ./manage.py migrate to create tables
+- √ run python ./manage.py migrate to create tables
 
-- run python ./manage.py createsuperuser for the admin user prompt
+- √ run python ./manage.py createsuperuser for the admin user prompt
 
-- run python ./manage.py runserver host:port, and hit host/port at hello-world url
+- √ run python ./manage.py runserver host:port, and hit host/port at hello-world url
 
-- add session-clearance crontab entry
+- √ add session-clearance crontab entry
 
-- update passenger-config
+- √ update passenger-config
+
+---
 
 
-## Initial work...
+### Initial work...
 
 - start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 
