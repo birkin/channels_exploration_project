@@ -21,16 +21,18 @@
 
 - [project to-do reference](https://gist.github.com/birkin/04a0a124d49be02e3d58)
 
-- √ create stuff directory
+- `√` means set up locally; `√√` means set up on dev-server, too
+
+- √√ create stuff directory
 
         $ mkdir ./dj_channels_exploration_stuff
         $ cd ./dj_channels_exploration_stuff
 
-- √ install virtualenv
+- √√ install virtualenv
 
         $ virtualenv --python=/usr/bin/python2.7 --prompt=[env27_chnl_expl] --no-site-packages ./env27_chnl_expl
 
-- √ upgrade pip
+- √√ upgrade pip
 
         $ source ./env27_chnl_expl/bin/activate
         $ pip install --upgrade pip
@@ -43,32 +45,32 @@
         Successfully installed pip
         Cleaning up...
 
-- √ install django project-template
+- √x install django project-template
 
         $ git clone https://github.com/birkin/django_template_project.git ./chnl_expl_project
         $ rm -rf ./chnl_expl_project/.git
 
-- √ customize template
+- √x customize template
     - app_x -> email_app  (other experimental apps will be added later)
     - django_template_project -> chnl_expl_project
     - env_min -> env27_chnl_expl
 
-- √ create github project
+- √x create github project
 
-- √ create sublime project
+- √x create sublime project
 
-- √ update env from requirements
+- √√ update env from requirements
 
-- √ make log dir
-    - √ add log to system's logrotate
-    - √ add dir to sublime project
+- √√ make log dir
+    - √√ add log to system's logrotate
+    - √x add dir to sublime project
 
-- √ make settings dir and env_settings.sh file
-    - √ add settings directory to sublime project
+- √√ make settings dir and env_settings.sh file
+    - √x add settings directory to sublime project
     - √ update env_settings.sh file
     - √ update env's activate.py and activate_this.py
 
-- √ add db
+- √√ add db
 
 - √ add django-media-directory
 
