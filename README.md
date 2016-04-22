@@ -67,14 +67,14 @@
 
 - √√ make settings dir and env_settings.sh file
     - √x add settings directory to sublime project
-    - √ update env_settings.sh file
-    - √ update env's activate.py and activate_this.py
+    - √√ update env_settings.sh file
+    - √√ update env's activate.py and activate_this.py
 
 - √√ add db
 
-- √ add django-media-directory
+- √√ add django-media-directory
 
-- √ make git-pull script (w/set-permissions) & run it
+- √√ make git-pull script (w/set-permissions) & run it
     - √ try a python ./manage.py check
 
 - √ run python ./manage.py migrate to create tables
