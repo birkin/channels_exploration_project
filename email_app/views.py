@@ -15,4 +15,9 @@ def hi( request ):
     """ Returns simplest response. """
     now = datetime.datetime.now()
     log.debug( 'now, `{}`'.format(now) )
-    return HttpResponse( '<p>hi</p> <p>( %s )</p>' % now )
+    rsp = HttpResponse( '<p>hi</p> <p>( {} )</p>'.format(now) )
+    log.debug( 'rsp, `{}`'.format(rsp) )
+    try:
+        return rsp
+    except Exception as e:
+        log.error( 'exception, ```{}```'.format(unicode(repr(e))) )
