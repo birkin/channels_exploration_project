@@ -19,7 +19,6 @@ stuff
 
 import os, pprint, sys
 
-
 ## become self-aware, padawan
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
