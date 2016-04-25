@@ -85,7 +85,12 @@
 
 - √√ add session-clearance crontab entry
 
-- √ update passenger-config
+- √ update http-config files
+    - √√ enable handoff
+    - x√ force https
+    - x√ enable shib
+
+- fix login
 
 ---
 
