@@ -107,4 +107,12 @@ This is a project to experiment with [Django Channels documentation](http://chan
 
 - start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 
+Flow...
+
+- √ start at urls_app.py to call a view
+- have the view display a form
+- get the form to save
+- get the invite to send via channels
+
+
 ---
