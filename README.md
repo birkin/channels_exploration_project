@@ -1,8 +1,16 @@
 ##### on this page
 
+- About
 - Django Channels info
 - Setup notes
 - Initial work
+
+---
+
+
+### About
+
+This is a project to experiment with [Django Channels documentation](http://channels.readthedocs.org/en/latest/index.html); my thought is to have a few apps, from different online tutorials, that can highlight different aspects of channels.
 
 ---
 
@@ -85,17 +93,17 @@
 
 - √√ add session-clearance crontab entry
 
-- √ update http-config files
+- √√ update http-config files
     - √√ enable handoff
     - x√ force https
     - x√ enable shib
 
-- fix login
+- √√ fix login
 
 ---
 
 
-### Initial work...
+### Initial work - email_app...
 
 - start going through [email-queue tutorial](https://www.wordfugue.com/using-django-channels-email-sending-queue/)
 

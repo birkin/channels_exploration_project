@@ -21,3 +21,9 @@ def hi( request ):
         return rsp
     except Exception as e:
         log.error( 'exception, ```{}```'.format(unicode(repr(e))) )
+
+
+def invite( request ):
+    """ Shows invite form. Submission will eventually be handed off to channels. """
+    now = datetime.datetime.now()
+    return HttpResponse( '<p>invite coming</p> <p>( {} )</p>'.format(now) )
