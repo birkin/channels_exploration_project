@@ -110,8 +110,9 @@ This is a project to experiment with [Django Channels documentation](http://chan
 Flow...
 
 - √ start at urls_app.py to call a view
-- create the model that the modelform, will use
-    - had to `$ python ./manage.py migrate --run-syncdb`
+- √ create the model that the modelform, will use
+    - √ had to `$ python ./manage.py migrate --run-syncdb`
+    - √ update admin to see new db table
 - create the modelform
 - have the view display a form
 - get the form to save
