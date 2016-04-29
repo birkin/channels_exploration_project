@@ -11,6 +11,6 @@ urlpatterns = patterns('',
 
     url( r'^invite/$',  'email_app.views.invite', name='invite_url' ),
 
-    url( r'^$',  RedirectView.as_view(pattern_name='info_url') ),
+    url( r'^$',  RedirectView.as_view(pattern_name='email:info_url') ),
 
     )
