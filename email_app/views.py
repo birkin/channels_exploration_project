@@ -2,15 +2,15 @@
 
 from __future__ import unicode_literals
 import datetime, json, logging, os, pprint
+from .formstuff import InvitationForm
 from django.conf import settings as project_settings
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-from .formstuff import InvitationForm
 
 log = logging.getLogger(__name__)
-
 
 def hi( request ):
     """ Returns simplest response. """
@@ -33,7 +33,10 @@ def invite( request ):
         # If data is valid, proceeds to create a new post and redirect the user
         if invite_form.is_valid():
             log.debug( 'form is valid' )
-            model_instance = invite_form.save()
+            invite_instance = invite_form.save( commit=False )
+            user = User.objects.all()[0]
+            invite_instance.sender = user
+            invite_instance.save()
             return HttpResponseRedirect( reverse('message_url') )
             # return HttpResponseRedirect(reverse('post_detail', kwargs={'post_id': post.id}))
     return render(  # gets here on GET or error
