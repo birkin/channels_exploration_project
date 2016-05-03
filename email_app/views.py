@@ -27,24 +27,20 @@ def hi( request ):
 def invite( request ):
     """ Shows invite form. Submission will eventually be handed off to channels. """
     if request.method == 'GET':
-        form = InvitationForm()
+        invite_form = InvitationForm()
     else:
-        # A POST request: Handle Form Upload
-        # Bind data from request.POST into a PostForm
-        form = InvitationForm(request.POST)
+        invite_form = InvitationForm(request.POST)
         # If data is valid, proceeds to create a new post and redirect the user
-        if form.is_valid():
+        if invite_form.is_valid():
             log.debug( 'form is valid' )
-            # content = form.cleaned_data['content']
-            # created_at = form.cleaned_data['created_at']
-            # post = m.Post.objects.create(content=content, created_at=created_at)
+            model_instance = invite_form.save()
+            return HttpResponseRedirect( reverse('message_url') )
             # return HttpResponseRedirect(reverse('post_detail', kwargs={'post_id': post.id}))
-
-    return render(request, 'email_app_templates/invite.html', {
-        'form': form,
-    })
-
+    return render(  # gets here on GET or error
+        request, 'email_app_templates/invite.html', {'form': invite_form,}
+        )
 
 
-    now = datetime.datetime.now()
-    return HttpResponse( '<p>invite coming</p> <p>( {} )</p>'.format(now) )
+def message( request ):
+    """ Displays success message. """
+    return HttpResponse( 'invitation sent' )

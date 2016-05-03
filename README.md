@@ -113,7 +113,7 @@ Flow...
 - √ create the model that the modelform, will use
     - √ had to `$ python ./manage.py migrate --run-syncdb`
     - √ update admin to see new db table
-- create the modelform
+- √ create the modelform
 - have the view display a form
 - get the form to save
 - get the invite to send via channels
