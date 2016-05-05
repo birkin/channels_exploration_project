@@ -36,6 +36,7 @@ def invite( request ):
             invite_instance = invite_form.save( commit=False )
             user = User.objects.all()[0]
             invite_instance.sender = user
+            invite_instance.sent = datetime.datetime.now()
             invite_instance.save()
             return HttpResponseRedirect( reverse('message_url') )
             # return HttpResponseRedirect(reverse('post_detail', kwargs={'post_id': post.id}))
