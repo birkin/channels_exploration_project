@@ -12,6 +12,7 @@ from django.shortcuts import get_object_or_404, render
 
 log = logging.getLogger(__name__)
 
+
 def hi( request ):
     """ Returns simplest response. """
     now = datetime.datetime.now()

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 """
 For django channels routing (akin to urls.py).
-Activated by settings.CHANNEL_LAYERS
+Activated by config.settings.CHANNEL_LAYERS
 """
 
 from channels.routing import route
