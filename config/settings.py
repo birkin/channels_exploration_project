@@ -63,6 +63,20 @@ WSGI_APPLICATION = 'config.passenger_wsgi.application'
 DATABASES = json.loads( os.environ['CHNNLS__DATABASES_JSON'] )
 
 
+# Django Channels
+# http://channels.readthedocs.org/en/latest/index.html
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+        "ROUTING": "chnl_expl_project.routing.channel_routing",
+    },
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
