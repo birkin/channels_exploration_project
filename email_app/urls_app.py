@@ -9,7 +9,8 @@ urlpatterns = patterns('',
 
     url( r'^info/$',  'email_app.views.hi', name='info_url' ),
 
-    url( r'^invite/$',  'email_app.views.invite', name='invite_url' ),
+    url( r'^regular_invite/$',  'email_app.views.invite_regular', name='invite_regular_url' ),
+    url( r'^channels_invite/$',  'email_app.views.invite_channels', name='invite_channels_url' ),
 
     url( r'^message/$',  'email_app.views.message', name='message_url' ),
 

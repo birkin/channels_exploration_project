@@ -25,8 +25,8 @@ def hi( request ):
         log.error( 'exception, ```{}```'.format(unicode(repr(e))) )
 
 
-def invite( request ):
-    """ Shows invite form. Submission will eventually be handed off to channels. """
+def invite_regular( request ):
+    """ Shows and submits invite form. Sends email traditionally. """
     if request.method == 'GET':
         invite_form = InvitationForm()
     else:
@@ -40,10 +40,14 @@ def invite( request ):
             invite_instance.sent = datetime.datetime.now()
             invite_instance.save()
             return HttpResponseRedirect( reverse('message_url') )
-            # return HttpResponseRedirect(reverse('post_detail', kwargs={'post_id': post.id}))
     return render(  # gets here on GET or error
         request, 'email_app_templates/invite.html', {'form': invite_form,}
         )
+
+
+def invite_channels( request ):
+    """ Shows and submits invite form. Sends email via channels. """
+    return HttpResponse( '<p>patience</p>' )
 
 
 def message( request ):
