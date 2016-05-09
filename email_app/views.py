@@ -39,7 +39,7 @@ def invite_regular( request ):
             invite_instance.sender = user
             invite_instance.sent = datetime.datetime.now()
             invite_instance.save()
-            return HttpResponseRedirect( reverse('message_url') )
+            return HttpResponseRedirect( reverse('email:message_url') )
     return render(  # gets here on GET or error
         request, 'email_app_templates/invite.html', {'form': invite_form,}
         )
