@@ -30,7 +30,7 @@ class ChannelsInvitationForm( forms.ModelForm ):
 
     def save(self, *args, **kwargs):
         self.instance.key = get_random_string( 32, allowed_chars='abcdefghjkmnpqrstuvwxyz23456789' )
-        response = super(InvitationForm, self).save(*args, **kwargs)
+        response = super(ChannelsInvitationForm, self).save(*args, **kwargs)
         notification = {
             'id': self.instance.id,
         }

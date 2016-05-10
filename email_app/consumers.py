@@ -8,10 +8,10 @@ Activated by config/routing.py
 """
 
 import logging
-from django.contrib.sites.models import Site
+# from django.contrib.sites.models import Site
 from django.core.mail import EmailMessage
 from django.utils import timezone
-from invitations.models import Invitation
+from email_app.models import Invitation
 
 
 # logger = logging.getLogger('email')
@@ -36,11 +36,11 @@ def send_invite(message):
         message = EmailMessage(
             subject=subject,
             body=body,
-            from_email="Invites <invites@%s.com>" % Site.objects.get_current().domain,
+            from_email="from_email",
             to=[invite.email,],
         )
         message.send()
         invite.sent = timezone.now()
         invite.save()
     except:
-        logger.exception('Problem sending invite %s' % (invite.id))
+        log.exception('Problem sending invite %s' % (invite.id))

@@ -47,23 +47,23 @@ def invite_regular( request ):
 
 def invite_channels( request ):
     """ Shows and submits invite form. Sends email via channels. """
-    # if request.method == 'GET':
-    #     invite_form = ChannelsInvitationForm()
-    # else:
-    #     invite_form = ChannelsInvitationForm(request.POST)
-    #     # If data is valid, proceeds to create a new post and redirect the user
-    #     if invite_form.is_valid():
-    #         log.debug( 'form is valid' )
-    #         invite_instance = invite_form.save( commit=False )
-    #         user = User.objects.all()[0]
-    #         invite_instance.sender = user
-    #         invite_instance.sent = datetime.datetime.now()
-    #         invite_instance.save()
-    #         return HttpResponseRedirect( reverse('email:message_url') )
-    # return render(  # gets here on GET or error
-    #     request, 'email_app_templates/invite.html', {'form': invite_form,}
-    #     )
-    return HttpResponse( '<p>patience</p>' )
+    if request.method == 'GET':
+        invite_form = ChannelsInvitationForm()
+    else:
+        invite_form = ChannelsInvitationForm(request.POST)
+        # If data is valid, proceeds to create a new post and redirect the user
+        if invite_form.is_valid():
+            log.debug( 'form is valid' )
+            invite_instance = invite_form.save( commit=False )
+            user = User.objects.all()[0]
+            invite_instance.sender = user
+            invite_instance.sent = datetime.datetime.now()
+            invite_instance.save()
+            return HttpResponseRedirect( reverse('email:message_url') )
+    return render(  # gets here on GET or error
+        request, 'email_app_templates/invite.html', {'form': invite_form,}
+        )
+    # return HttpResponse( '<p>patience</p>' )
 
 
 def message( request ):

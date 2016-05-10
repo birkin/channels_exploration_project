@@ -8,9 +8,9 @@ Activated by config.settings.CHANNEL_LAYERS
 """
 
 from channels.routing import route
-from .consumers import send_invite
+from email_app.consumers import send_invite
 
 
 channel_routing = [
-    route('send-invite',send_invite),
+    route( 'send-invite', send_invite ),
 ]
