@@ -48,17 +48,21 @@ def invite_regular( request ):
 def invite_channels( request ):
     """ Shows and submits invite form. Sends email via channels. """
     if request.method == 'GET':
+        log.debug( 'in invite_channels() GET' )
         invite_form = ChannelsInvitationForm()
     else:
+        log.debug( 'in invite_channels() POST' )
         invite_form = ChannelsInvitationForm(request.POST)
         # If data is valid, proceeds to create a new post and redirect the user
         if invite_form.is_valid():
-            log.debug( 'form is valid' )
+            log.debug( 'channels form is valid' )
             invite_instance = invite_form.save( commit=False )
             user = User.objects.all()[0]
             invite_instance.sender = user
             invite_instance.sent = datetime.datetime.now()
+            log.debug( 'about to hit `invite_instance.save()`' )
             invite_instance.save()
+            log.debug( 'about to return redirect' )
             return HttpResponseRedirect( reverse('email:message_url') )
     return render(  # gets here on GET or error
         request, 'email_app_templates/invite.html', {'form': invite_form,}

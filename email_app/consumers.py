@@ -19,12 +19,13 @@ log = logging.getLogger(__name__)
 
 
 def send_invite(message):
+    log.debug( 'starting send_invite()' )
     try:
         invite = Invitation.objects.get(
             id=message.content.get('id'),
         )
     except Invitation.DoesNotExist:
-        logger.error("Invitation to send not found")
+        log.error("Invitation to send not found")
         return
 
     subject = "You've been invited!"
