@@ -100,6 +100,18 @@ This is a project to experiment with [Django Channels documentation](http://chan
 
 - √√ fix login
 
+- √ confirm redis is running
+
+        >>> import redis
+        >>> rds = redis.StrictRedis( host=u'localhost', port=6379, db=0 )
+        >>> rds.get( 'foo' )
+        # blank line
+        >>> rds.set( u'foo', u'bar' )
+        True
+        >>> rds.get( 'foo' )
+        'bar'
+
+
 ---
 
 

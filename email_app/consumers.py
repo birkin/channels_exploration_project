@@ -16,6 +16,7 @@ from email_app.models import Invitation
 
 # logger = logging.getLogger('email')
 log = logging.getLogger(__name__)
+log.debug( 'consumers.py loaded' )
 
 
 def send_invite(message):
