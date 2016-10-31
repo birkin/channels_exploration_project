@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 import logging
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import RedirectView
 
@@ -14,7 +14,7 @@ admin.autodiscover()
 
 
 log.debug( 'about to load urlpatterns' )
-urlpatterns = patterns('',
+urlpatterns = [
 
     url( r'^admin/', include(admin.site.urls) ),  # eg host/project_x/admin/
 
@@ -24,4 +24,4 @@ urlpatterns = patterns('',
 
     url( r'^$',  RedirectView.as_view(pattern_name='email:info_url') ),
 
-)
+]
