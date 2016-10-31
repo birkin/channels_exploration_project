@@ -28,16 +28,19 @@ def hi( request ):
 def invite_regular( request ):
     """ Shows and submits invite form. Sends email traditionally. """
     if request.method == 'GET':
+        log.debug( 'in invite_regular() GET' )
         invite_form = InvitationForm()
     else:
+        log.debug( 'in invite_regular() POST' )
         invite_form = InvitationForm(request.POST)
         # If data is valid, proceeds to create a new post and redirect the user
         if invite_form.is_valid():
-            log.debug( 'form is valid' )
+            log.debug( 'regular form is valid' )
             invite_instance = invite_form.save( commit=False )
             user = User.objects.all()[0]
             invite_instance.sender = user
             invite_instance.sent = datetime.datetime.now()
+            log.debug( 'about to hit regular `invite_instance.save()`' )
             invite_instance.save()
             return HttpResponseRedirect( reverse('email:message_url') )
     return render(  # gets here on GET or error
@@ -57,17 +60,18 @@ def invite_channels( request ):
         if invite_form.is_valid():
             log.debug( 'channels form is valid' )
             invite_instance = invite_form.save( commit=False )
+            log.debug( 'invite_instance.__dict__ after false save, ```{}```'.format(pprint.pformat(invite_instance.__dict__)) )
             user = User.objects.all()[0]
             invite_instance.sender = user
             invite_instance.sent = datetime.datetime.now()
-            log.debug( 'about to hit `invite_instance.save()`' )
+            log.debug( 'about to hit channels `invite_instance.save()`' )
             invite_instance.save()
+            log.debug( 'invite_instance.__dict__ after real save, ```{}```'.format(pprint.pformat(invite_instance.__dict__)) )
             log.debug( 'about to return redirect' )
             return HttpResponseRedirect( reverse('email:message_url') )
     return render(  # gets here on GET or error
         request, 'email_app_templates/invite.html', {'form': invite_form,}
         )
-    # return HttpResponse( '<p>patience</p>' )
 
 
 def message( request ):
