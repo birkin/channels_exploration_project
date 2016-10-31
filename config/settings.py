@@ -23,7 +23,7 @@ SECRET_KEY = os.environ['CHNNLS__SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = json.loads( os.environ['CHNNLS__DEBUG_JSON'] )  # will be True or False
-TEMPLATE_DEBUG = DEBUG
+# TEMPLATE_DEBUG = DEBUG
 
 ADMINS = json.loads( os.environ['CHNNLS__ADMINS_JSON'] )
 MANAGERS = ADMINS
@@ -101,7 +101,8 @@ STATIC_ROOT = os.environ['CHNNLS__STATIC_ROOT']  # needed for collectstatic comm
 
 # Templates
 
-TEMPLATE_DIRS = json.loads( os.environ['CHNNLS__TEMPLATE_DIRS'] )  # list
+# TEMPLATE_DIRS = json.loads( os.environ['CHNNLS__TEMPLATE_DIRS'] )  # list
+TEMPLATES = json.loads( os.environ['CHNNLS__TEMPLATES_JSON'] )  # list of dict(s)
 
 
 # Email
