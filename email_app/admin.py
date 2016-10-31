@@ -7,7 +7,7 @@ from django.contrib import admin
 
 class InvitationAdmin( admin.ModelAdmin ):
     date_hierarchy = 'sent'
-    list_display = [ 'sent', 'sender', 'email' ]
+    list_display = [ 'sent', 'sender', 'email', 'key', 'id' ]
     ordering = [ '-id' ]
 
 
