@@ -20,6 +20,8 @@ urlpatterns = [
 
     url( r'^email_demo/', include('email_app.urls_app', namespace='email') ),
 
+    url( r'^web_response_demo/', include('web_response_app.urls_app', namespace='web') ),
+
     url( r'^', include('email_app.urls_app') ),  # eg host/project_x/anything/
 
     url( r'^$',  RedirectView.as_view(pattern_name='email:info_url') ),

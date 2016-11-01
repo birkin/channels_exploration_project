@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'channels',
     'email_app',
+    'web_response_app',
 )
 
 MIDDLEWARE_CLASSES = (
