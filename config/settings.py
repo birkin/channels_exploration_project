@@ -154,6 +154,10 @@ LOGGING = {
             'handlers': ['logfile'],
             'level': os.environ.get(u'CHNNLS__LOG_LEVEL'),
         },
+        'web_response_app': {
+            'handlers': ['logfile'],
+            'level': os.environ.get(u'CHNNLS__LOG_LEVEL'),
+        },
     }
 }
 
