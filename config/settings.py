@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'channels',
     'email_app',
-    'web_response_app',
+    'primes_app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -154,7 +154,7 @@ LOGGING = {
             'handlers': ['logfile'],
             'level': os.environ.get(u'CHNNLS__LOG_LEVEL'),
         },
-        'web_response_app': {
+        'primes_app': {
             'handlers': ['logfile'],
             'level': os.environ.get(u'CHNNLS__LOG_LEVEL'),
         },

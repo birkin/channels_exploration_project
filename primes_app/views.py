@@ -20,7 +20,7 @@ def hi( request ):
         log.error( 'exception, ```{}```'.format(unicode(repr(e))) )
 
 
-def response_regular( request ):
+def regular_is_prime( request ):
     log.debug( 'starting response_regular()' )
     param = request.GET.get( 'foo', '' )
     if param:
@@ -30,7 +30,7 @@ def response_regular( request ):
     return HttpResponse( response_string )
 
 
-def response_channels( request ):
+def channels_is_prime( request ):
     log.debug( 'starting response_channels()' )
     return HttpResponse( 'zz' )
     result = Channel('make-response').send( {'foo': 'bar'} )
